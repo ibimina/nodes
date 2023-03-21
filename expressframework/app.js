@@ -32,10 +32,10 @@ app.get("/about-us", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-  res.statusCode(404).sendFile("./views/contact.html", { root: __dirname });
+  res.sendFile("./views/contact.html", { root: __dirname });
 });
 
 //404 page
 app.get((req, res) => {
-  res.sendFile("./views/404.html", { root: __dirname });
+  res.statusCode(404).sendFile("./views/404.html", { root: __dirname });
 });
