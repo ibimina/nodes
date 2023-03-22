@@ -7,8 +7,12 @@
             <h1>Server Rendering</h1>
             <p>Node js</p>
             <p>Use ejs to insert dynamic data</p>
-
-            <%- include('./partials/footer.ejs') %>
+            <% if(nodeTopics.length>0) { %>
+             <% nodeTopics.forEach(topic=>{ %>
+               <h1> <%= topic.title %> </h1> 
+                <% }) %>
+            <% } %>
+         <%- include('./partials/footer.ejs') %>
     </body>
 
 </html>
