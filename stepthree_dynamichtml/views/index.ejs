@@ -10,8 +10,13 @@
             <% if(nodeTopics.length>0) { %>
              <% nodeTopics.forEach(topic=>{ %>
                <h1> <%= topic.title %> </h1> 
+                <p>
+                    <%= topic.snippets %>
+                </p>
                 <% }) %>
-            <% } %>
+            <% } else {%>
+<p> no topics</p>
+                <%}%>
          <%- include('./partials/footer.ejs') %>
     </body>
 
