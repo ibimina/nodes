@@ -1,15 +1,18 @@
-const express = require('express')
+const express = require("express");
 
+const app = express();
 
-const app = express()
+app.set("view engine", "ejs");
+app.listen(3000);
 
-app.set('view engine',"ejs")
-app.listen(3000)
-
-
-app.get('/',(req,res)=>{
-    res.render('index',{title:"intro"})
-})
+app.get("/", (req, res) => {
+  const nodeTopics = [
+    { id: "1", title: "Introduction to nodejs" },
+    { id: "2", title: "Request types" },
+    { id: "3", title: "import and export modules" },
+  ];
+  res.render("index",{title:"Intro",nodeTopics})
+});
 
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
